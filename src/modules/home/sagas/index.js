@@ -19,7 +19,7 @@ export function* genesis() {
         ? 'rinkeby'
         : networkID === '1'
           ? 'mainnet'
-          : networkID === '420' || networkID === '9001'
+          : networkID === '420' || networkID === '9001' || networkID === '5777'
             ? 'ganache'
             : 'unknown'
     const account = (yield call(ethjs.accounts))[0]

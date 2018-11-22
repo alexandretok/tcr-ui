@@ -79,7 +79,7 @@ function* sendTxStartSaga(action) {
         // hash the string listingID
         const listingHash = yield call(getListingHash, listingID)
         // NOTE: this follows the conventions supported by the forked kangarang/tcr contracts
-        let args = [listingHash, convertedNumTokens, listingID, data]
+        let args = [listingHash, convertedNumTokens, data]
 
         // check if the current multihash points to Prospect Park
         const ipfsAbiMultihash = yield call(getIpfsABIsHash, tcr.get('tokenAddress'))
