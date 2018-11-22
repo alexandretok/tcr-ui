@@ -2,8 +2,8 @@
 export const ipfsABIsHash = 'QmdvnGG7NCLsH5u4kxe2pcVcDGvxNtfouccRHBT64jvPGr'
 export const ipfsTokensHash = 'QmRH8e8ssnj1CWVepGvAdwaADKNkEpgDU5bffTbeS6JuG9'
 // hardcoded FORCED registry address
-export const hardcodedRegistryAddress = '0x7c33a05d45c3bbc48765add4e2233cef73dd2a9e'
-export const defaultRegistryAddress = '0x7c33a05d45c3bbc48765add4e2233cef73dd2a9e'
+export const hardcodedRegistryAddress = '0x5a5e3f00cd4e0a5e34cd2f0093e66828a23fdd86'
+export const defaultRegistryAddress = '0x5a5e3f00cd4e0a5e34cd2f0093e66828a23fdd86'
 
 export function getIpfsABIsHash(tokenAddress) {
   if (tokenAddress === '0xd0d6d6c5fe4a677d343cc433536bb717bae167dd') {
@@ -17,13 +17,13 @@ export const registries = {
   ganache: [
     {
       name: 'Fake News Registry',
-      tokenAddress: '0x2b7b6b36030c275fd01834afeb12bb35ec8bf68d',
-      votingAddress: '0x909ab7c423ae3803bbf0ef5d014f58a70e92e182',
-      parameterizerAddress: '0x41818e0476a4ecb99a2087e77fc714ee9565d6b7',
-      registryAddress: '0x7c33a05d45c3bbc48765add4e2233cef73dd2a9e',
+      tokenAddress: '0x637c4802711847c39e73c286a81409a162d93385',
+      votingAddress: '0xc7404ba954d6fa72144c5d45295f84a8307d1687',
+      parameterizerAddress: '0xb78e7ee2bbd98e5edc6d427826dbb8450ca692df',
+      registryAddress: '0x5a5e3f00cd4e0a5e34cd2f0093e66828a23fdd86',
       tokenSymbol: 'TRU',
       tokenName: 'TrueToken',
-      multihash: 'QmeadmrVMZsSt4UZt3LzTWAdjf8RS2JE4i21eaVeCwZjGJ',
+      multihash: 'QmRtHAT4Ex5t9QzM9xxBqkBD9BfTP96zdHAAPQuwPUxxzd',
     },
   ],
 }
