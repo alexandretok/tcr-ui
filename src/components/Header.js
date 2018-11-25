@@ -110,10 +110,7 @@ class Header extends Component {
 
         <NavWrapper>
           <NavLinks>
-            <NavLink onClick={onHandleToggleRegistries}>Registries</NavLink>
             <NavLink onClick={e => onOpenTxPanel(null, 'apply')}>Add an application</NavLink>
-            <NavLink>Vote</NavLink>
-            <NavLink>How does this work?</NavLink>
           </NavLinks>
 
           <UserInfo>

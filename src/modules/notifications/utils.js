@@ -39,7 +39,7 @@ export function getNotificationTitleAndMessage(eventName, logData, tcr, listing)
   let title, message
   switch (eventName) {
     case '_Application':
-      title = `Application ${logData.listingID} applied`
+      title = `Application ${listing.listingID} applied`
       message = 'Click to review the listing'
       break
     case '_ApplicationWhitelisted':

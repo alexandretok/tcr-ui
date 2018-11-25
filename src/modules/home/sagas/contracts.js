@@ -167,7 +167,7 @@ function* contractsSaga(action) {
     // set the html title tag
     document.title = registryNameResult['0']
 
-    const tokenDecimals = tokenDecimalsResult['0'].toString(10)
+    const tokenDecimals = +tokenDecimalsResult['0'].toString(10)
     const parameters = {
       // convert minDeposit based on the decimals of the token
       minDeposit: fromTokenBase(minDeposit['0'].toString(10), tokenDecimals),

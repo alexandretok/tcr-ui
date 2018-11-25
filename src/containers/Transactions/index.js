@@ -42,7 +42,9 @@ class TransactionsProvider extends Component {
     } = this.props
 
     const needToApproveRegistry = balances.registryAllowance < parameters.minDeposit
-    const needToApproveVoting = balances.votingAllowance === ''
+    const needToApproveVoting = txPanelListing
+      ? +balances.votingAllowance < +txPanelListing.unstakedDeposit
+      : false
 
     return (
       <TransactionsContext.Provider

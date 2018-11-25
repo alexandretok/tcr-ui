@@ -9,13 +9,13 @@ const FlexSpaceBetween = styled.div`
   margin: 2em 0;
 `
 
-export default ({ minDeposit, tokenSymbol, copy }) => (
+export default ({ deposit, tokenSymbol, copy }) => (
   <FlexSpaceBetween>
     <Text size="large" weight="normal" color="black">
       {copy}
     </Text>
     <Text size="large" weight="bold" color="black">
-      {`${minDeposit} ${tokenSymbol}`}
+      {`${deposit} ${tokenSymbol}`}
     </Text>
   </FlexSpaceBetween>
 )

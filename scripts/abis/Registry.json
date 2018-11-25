@@ -786,7 +786,7 @@
   },
   "networks": {
     "ganache": {
-      "address": "0x5a5e3f00cd4e0a5e34cd2f0093e66828a23fdd86"
+      "address": "0x67bf3dd0c9c61236c0a9c7f6f8770b6a9e632f53"
     }
   },
   "schemaVersion": "2.0.1",

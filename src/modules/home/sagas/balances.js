@@ -45,7 +45,7 @@ function* updateBalancesSaga() {
     ])
 
     // convert/format from base units
-    const decimals = tcr.get('tokenDecimals')
+    const decimals = +tcr.get('tokenDecimals')
     const [registryAllowance, votingAllowance, votingRights, lockedTokens] = yield all([
       fromTokenBase(registryAllowanceRaw['0'], decimals),
       fromTokenBase(votingAllowanceRaw['0'], decimals),

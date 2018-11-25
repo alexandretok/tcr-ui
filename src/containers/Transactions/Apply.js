@@ -21,7 +21,7 @@ export default class Apply extends React.Component {
     numTokens: '',
   }
   handleChangeListingID = e => this.setState({ listingID: e.target.value })
-  handleChangeData = e => this.setState({ data: e.target.value })
+  handleChangeData = e => this.setState({ data: e.target.value, listingID: e.target.value })
   handleChangeNumTokens = e => this.setState({ numTokens: e.target.value })
   render() {
     return (
@@ -49,27 +49,18 @@ export default class Apply extends React.Component {
             ) : (
               <div>
                 <SideTextInput
-                  title="Listing Name"
+                  title="News URL"
                   type="text"
-                  handleInputChange={this.handleChangeListingID}
-                  value={this.state.listingID}
+                  handleInputChange={this.handleChangeData}
+                  value={this.state.data}
                 />
 
                 <TotalAmount
-                  copy={'Minimum Deposit'}
-                  minDeposit={parameters.minDeposit}
+                  copy={'Deposit'}
+                  deposit={balances.registryAllowance}
                   tokenSymbol={tcr.tokenSymbol}
                 />
               </div>
-            )}
-
-            {!needToApproveRegistry && (
-              <SideTextInput
-                title="img url"
-                type="text"
-                handleInputChange={this.handleChangeData}
-                value={this.state.data}
-              />
             )}
 
             <SidePanelSeparator />

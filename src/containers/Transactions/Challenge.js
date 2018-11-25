@@ -42,11 +42,7 @@ export default class Challenge extends React.Component {
 
             <MarginDiv>
               <Countdown
-                end={
-                  selectedOne && selectedOne.appExpiry
-                    ? selectedOne.appExpiry.date
-                    : false
-                }
+                end={selectedOne && selectedOne.appExpiry ? selectedOne.appExpiry.date : false}
               />
             </MarginDiv>
 
@@ -54,7 +50,7 @@ export default class Challenge extends React.Component {
 
             <TotalAmount
               copy={'Total Stake'}
-              minDeposit={parameters.minDeposit}
+              deposit={selectedOne ? parseInt(selectedOne.unstakedDeposit) : parameters.minDeposit}
               tokenSymbol={tcr.tokenSymbol}
             />
 
@@ -62,10 +58,7 @@ export default class Challenge extends React.Component {
 
             <MarginDiv>
               {needToApproveRegistry ? (
-                <Button
-                  onClick={() => onSendTx('approveRegistry', this.state)}
-                  mode="strong"
-                >
+                <Button onClick={() => onSendTx('approveRegistry', this.state)} mode="strong">
                   {'Approve tokens for Registry'}
                 </Button>
               ) : (

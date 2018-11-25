@@ -44,10 +44,7 @@ export async function handleMultihash(listingHash, data) {
     // use the token api to retrieve the resources
     if (isAddress(listingID.toLowerCase())) {
       // TODO: move to api module
-      listingData = find(
-        toke => toke.address.toLowerCase() === listingID.toLowerCase(),
-        tokenList
-      )
+      listingData = find(toke => toke.address.toLowerCase() === listingID.toLowerCase(), tokenList)
       // TODO: move to api module
       const baseUrl = `https://raw.githubusercontent.com/kangarang/token-icons/master/images/`
       if (listingData && listingData.address) {
@@ -85,7 +82,7 @@ export async function createListing(logData, txData) {
   } else if (data && !listingID) {
     // CASE: Prospect Park -- data is identifier
     listingID = data
-    data = ''
+    // data = ''
   } else if (data && listingID) {
     // CASE: kangarang/tcr fork -- listingID is identifier, data is metadata
     listingData.imgSrc = data
@@ -103,7 +100,7 @@ export async function createListing(logData, txData) {
     listingID,                    // string identifier
     listingData,                  // applicant metadata
     status: 'applications',       // determines conditional rendering. can be 1 of: applications, whitelist, faceoffs, removed
-    unstakedDeposit: deposit,     // applicant's security deposit
+    unstakedDeposit: +deposit,    // applicant's security deposit
     appExpiry,                    // info about the application period
     pollID: false,                // if challenged, will become the challenge's challengeID / poll's pollID
     challenger: false,            // address of one who submits a challenge against this listing
@@ -195,9 +192,7 @@ function transformListing(oldGolem, log, txData, eventName, account) {
           .set('status', fromJS('removed'))
           .set('whitelistBlockTimestamp', fromJS(''))
       } else {
-        return golem
-          .set('status', fromJS('removed'))
-          .set('whitelistBlockTimestamp', fromJS(''))
+        return golem.set('status', fromJS('removed')).set('whitelistBlockTimestamp', fromJS(''))
       }
     case '_PollCreated':
       return golem
