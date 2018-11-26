@@ -1,12 +1,15 @@
 import format from 'date-fns/format'
 import isAfter from 'date-fns/is_after'
 import differenceInSeconds from 'date-fns/difference_in_seconds'
+import ptLocale from 'date-fns/locale/pt'
 
 export const dateHasPassed = uts => isAfter(new Date(), new Date(uts * 1000))
 
-export const formatHtmlDatetime = date => format(date, 'YYYY-MM-DDTHH:mm:ss.SSSZ')
-export const getEndDateString = uts => format(new Date(uts * 1000), 'MM/DD/YY_HH:mm:ss')
-export const tsToMonthDate = uts => format(new Date(uts * 1000), 'MMMM Do')
+export const formatHtmlDatetime = date =>
+  format(date, 'YYYY-MM-DDTHH:mm:ss.SSSZ', { locale: ptLocale })
+export const getEndDateString = uts =>
+  format(new Date(uts * 1000), 'MM/DD/YY_HH:mm:ss', { locale: ptLocale })
+export const tsToMonthDate = uts => format(new Date(uts * 1000), 'MMMM Do', { locale: ptLocale })
 
 export const difference = (date1, date2) => {
   const MINUTE_IN_SECONDS = 60
