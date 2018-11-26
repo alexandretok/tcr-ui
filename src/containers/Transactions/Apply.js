@@ -38,25 +38,25 @@ export default class Apply extends React.Component {
           tcr,
         }) => (
           <SidePanel
-            title="Start an Application"
+            title="Iniciar uma candidatura"
             opened={opened === 'apply'}
             onClose={closeTxPanel}
           >
             <SidePanelSeparator />
 
             {needToApproveRegistry ? (
-              <div>You need to approve the registry</div>
+              <div>Você precisa permitir que o sistema utilize seus tokens</div>
             ) : (
               <div>
                 <SideTextInput
-                  title="News URL"
+                  title="URL da notícia falsa"
                   type="text"
                   handleInputChange={this.handleChangeData}
                   value={this.state.data}
                 />
 
                 <TotalAmount
-                  copy={'Deposit'}
+                  copy={'Tokens a depositar'}
                   deposit={balances.registryAllowance}
                   tokenSymbol={tcr.tokenSymbol}
                 />
@@ -69,7 +69,7 @@ export default class Apply extends React.Component {
               {needToApproveRegistry ? (
                 <div>
                   <SideTextInput
-                    title="token amount"
+                    title="Quantidade de tokens"
                     type="number"
                     handleInputChange={this.handleChangeNumTokens}
                     value={this.state.numTokens}
@@ -79,7 +79,7 @@ export default class Apply extends React.Component {
                     onClick={() => onSendTx('approveRegistry', this.state)}
                     mode="strong"
                   >
-                    {'Approve tokens for Registry'}
+                    {'Permitir'}
                   </Button>
                 </div>
               ) : (
@@ -90,31 +90,27 @@ export default class Apply extends React.Component {
                   color={'white'}
                   onClick={() => onSendTx('apply', this.state)}
                 >
-                  {'SUBMIT APPLICATION'}
+                  {'Enviar candidatura'}
                 </Button>
               )}
             </MarginDiv>
 
             <MarginDiv>
-              {!visibleApprove ? (
-                <Button onClick={showApprove} mode="">
-                  {'Show approve'}
-                </Button>
-              ) : (
+              {
                 <div>
                   {needToApproveRegistry && (
                     <Text
                       size="xlarge"
                       color="red"
-                      children={`You must approve the Registry contract before you can submit an application. Your current allowance for the Registry is ${
+                      children={`Você precisa permitir que o contrato do sistema utilize seus tokens antes de enviar uma candidatura. O valor atualmente permitido é de ${
                         balances.registryAllowance
-                      }. The minimum deposit for application in the Registry is ${
-                        parameters.minDeposit
-                      } ${tcr.tokenSymbol}`}
+                      }. O depósito mínimo para uma candidatura é de ${parameters.minDeposit} ${
+                        tcr.tokenSymbol
+                      }`}
                     />
                   )}
                 </div>
-              )}
+              }
             </MarginDiv>
           </SidePanel>
         )}

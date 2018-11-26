@@ -27,7 +27,7 @@ storiesOf('Cards', module).add('Challenge Listing', () => (
   <TallListingCard>
     <CardName>{'NAME'}</CardName>
     <Button mode="strong" wide methodName="challenge" onClick={action('CHALLENGE')}>
-      {'CHALLENGE'}
+      {'DESAFIAR'}
     </Button>
   </TallListingCard>
 ))
@@ -54,9 +54,7 @@ const SelectRegistryButton = styled(Button)`
 storiesOf('Cards', module).add('Select Registry', () => (
   <RegistryCard>
     <CardName>{'REGISTRY ONE'}</CardName>
-    <SelectRegistryButton onClick={action('selectRegistry')}>
-      View the List
-    </SelectRegistryButton>
+    <SelectRegistryButton onClick={action('selectRegistry')}>View the List</SelectRegistryButton>
   </RegistryCard>
 ))
 

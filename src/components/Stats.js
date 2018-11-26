@@ -27,15 +27,15 @@ export default ({ stats, balances, tcr }) => (
   <StatsWrapper>
     <StatContainer>
       <Stat>{stats.sizes.applications}</Stat>
-      <StatLabel>TOTAL APPLICATIONS</StatLabel>
+      <StatLabel>TOTAL DE CANDIDATOS</StatLabel>
     </StatContainer>
     <StatContainer>
       <Stat>{balances.totalStake}</Stat>
-      <StatLabel>{`TOTAL ${tcr.tokenSymbol} STAKED`}</StatLabel>
+      <StatLabel>{`TOTAL DE ${tcr.tokenSymbol} COMPROMETIDOS`}</StatLabel>
     </StatContainer>
     <StatContainer>
       <Stat>{stats.sizes.whitelist}</Stat>
-      <StatLabel>LISTINGS IN REGISTRY</StatLabel>
+      <StatLabel>NOTÍCIAS FALSAS ACEITAS</StatLabel>
     </StatContainer>
   </StatsWrapper>
 )

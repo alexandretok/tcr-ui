@@ -23,20 +23,26 @@ export default class Transfer extends React.Component {
       <TransactionsContext.Consumer>
         {({ closeTxPanel, opened, onSendTx }) => (
           <SidePanel
-            title="Transfer Tokens"
+            title="Transferir Tokens"
             opened={opened === 'transfer'}
             onClose={closeTxPanel}
           >
             <SidePanelSeparator />
-            <SideText small color="grey" text={'Number of tokens to transfer'} />
+            <SideText
+              small
+              color="grey"
+              text={
+                'Essa operação irá transferir tokens de sua carteira para um endereço específicado.'
+              }
+            />
             <SideTextInput
-              title="Address"
+              title="Endereço"
               type="string"
               handleInputChange={this.handleChangeTransferTo}
               value={this.state.transferTo}
             />
             <SideTextInput
-              title="Number tokens"
+              title="Número de tokens"
               type="number"
               handleInputChange={this.handleChangeNumTokens}
               value={this.state.numTokens}
@@ -54,7 +60,7 @@ export default class Transfer extends React.Component {
                 color={'white'}
                 mode="strong"
               >
-                {'Transfer Tokens'}
+                {'Transferir Tokens'}
               </Button>
             </MarginDiv>
           </SidePanel>

@@ -10,19 +10,19 @@ class ClaimReward extends Component {
   render() {
     return (
       <TransactionsContext.Consumer>
-        {({ opened, closeTxPanel, handleFileInput, handleClaimReward }) => (
+        {({ opened, selectedOne, closeTxPanel, onSendTx }) => (
           <SidePanel
-            title="Claim Reward"
+            title="Solicitar Recompensa"
             opened={opened === 'claimReward'}
             onClose={closeTxPanel}
           >
             <MarginDiv>
-              <FileInput type="file" name="file" onChange={handleFileInput} />
-            </MarginDiv>
-
-            <MarginDiv>
-              <Button onClick={handleClaimReward} mode="strong" wide>
-                {'Claim Reward'}
+              <Button
+                onClick={() => onSendTx('claimReward', { pollID: selectedOne.challengeID })}
+                mode="strong"
+                wide
+              >
+                {'Solicitar Recompensa'}
               </Button>
             </MarginDiv>
           </SidePanel>

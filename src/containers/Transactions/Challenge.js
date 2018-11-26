@@ -30,7 +30,7 @@ export default class Challenge extends React.Component {
           tcr,
         }) => (
           <SidePanel
-            title="Challenge a Listing"
+            title="Desafiar uma notícia aceita"
             opened={opened === 'challenge'}
             onClose={closeTxPanel}
           >
@@ -49,7 +49,7 @@ export default class Challenge extends React.Component {
             <SidePanelSeparator />
 
             <TotalAmount
-              copy={'Total Stake'}
+              copy={'Total de tokens'}
               deposit={selectedOne ? parseInt(selectedOne.unstakedDeposit) : parameters.minDeposit}
               tokenSymbol={tcr.tokenSymbol}
             />
@@ -59,7 +59,7 @@ export default class Challenge extends React.Component {
             <MarginDiv>
               {needToApproveRegistry ? (
                 <Button onClick={() => onSendTx('approveRegistry', this.state)} mode="strong">
-                  {'Approve tokens for Registry'}
+                  {'Aprovar tokens para o Registro'}
                 </Button>
               ) : (
                 <Button
@@ -68,7 +68,7 @@ export default class Challenge extends React.Component {
                   mode="strong"
                   wide
                 >
-                  {'CHALLENGE'}
+                  {'DESAFIAR'}
                 </Button>
               )}
             </MarginDiv>

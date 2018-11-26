@@ -8,13 +8,13 @@ import SidePanel from './components/SidePanel'
 
 export default ({ opened, closeTxPanel, tcr, handleInputChange }) => (
   <div>
-    <SidePanel title="Start an Application" opened={opened} onClose={closeTxPanel}>
+    <SidePanel title="Iniciar uma candidatura" opened={opened} onClose={closeTxPanel}>
       <SidePanelSeparator />
 
       <MarginDiv>
         <SideText
           color="red"
-          text={`You must have ${tcr.tokenName} to participate in this TCR`}
+          text={`Você precisa ter ${tcr.tokenName} para participar desse TCR`}
         />
       </MarginDiv>
 

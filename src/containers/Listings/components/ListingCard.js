@@ -53,6 +53,8 @@ function ListingCard(props) {
     claimRewardTrigger,
   } = props
 
+  console.log('update', updateTrigger, 'reveal', revealTrigger, 'claim', claimRewardTrigger)
+
   return (
     <div>
       <Card className={classes.card}>
@@ -61,11 +63,9 @@ function ListingCard(props) {
         </div>
 
         <CardContent className={classes.content}>
-          {one.data.startsWith('http') ? (
-            <Img alt="listing data" src={one.data} />
-          ) : (
-            <div>{one.data}</div>
-          )}
+          <br />
+          <br />
+          <div>{one.listingID}</div>
           <PadDiv className={classes.buttContainer}>
             <Typography component="p">
               {tsToMonthDate(
@@ -88,7 +88,7 @@ function ListingCard(props) {
                     onClick={e => openTxPanel(one, 'commitVote')}
                     color="primary"
                   >
-                    {'Commit Vote'}
+                    {'Enviar Voto'}
                   </Button>
                 </div>
               ) : (
@@ -101,13 +101,13 @@ function ListingCard(props) {
                       color="primary"
                       methodName="revealVote"
                     >
-                      {'Reveal Vote'}
+                      {'Revelar Voto'}
                     </Button>
                   </div>
                 )
               )}
             </div>
-          ) : (
+          ) : listingType !== 'removed' ? (
             <div>
               <Countdown end={one.appExpiry.date} />
               <Button
@@ -116,17 +116,17 @@ function ListingCard(props) {
                 color="secondary"
                 methodName="challenge"
               >
-                {'Challenge'}
+                {'Desafiar'}
               </Button>
             </div>
-          )}
+          ) : null}
           {claimRewardTrigger && (
             <Button
               methodName="claimReward"
               onClick={e => openTxPanel(one, 'claimReward')}
               color="primary"
             >
-              {'Claim Reward'}
+              {'Solicitar Recompensa'}
             </Button>
           )}
           {updateTrigger && (
@@ -136,7 +136,7 @@ function ListingCard(props) {
               color="primary"
               wide
             >
-              {'Refresh'}
+              {'Atualizar'}
             </Button>
           )}
         </ButtonContainer>

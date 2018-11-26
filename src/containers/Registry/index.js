@@ -68,7 +68,7 @@ const styles = theme => ({
 
 class Registry extends Component {
   state = {
-    value: 'whitelist',
+    value: 'applications',
   }
   handleChange = (event, value) => {
     this.setState({ value })
@@ -104,19 +104,25 @@ class Registry extends Component {
               disableRipple
               value="whitelist"
               classes={{ root: tabRoot, selected: tabSelected }}
-              label={`IN REGISTRY (${stats.sizes.whitelist})`}
+              label={`ACEITAS (${stats.sizes.whitelist})`}
             />
             <Tab
               disableRipple
               value="applications"
               classes={{ root: tabRoot, selected: tabSelected }}
-              label={`NEW APPLICATIONS (${stats.sizes.applications})`}
+              label={`NOVOS CANDIDATOS (${stats.sizes.applications})`}
             />
             <Tab
               disableRipple
               value="faceoffs"
               classes={{ root: tabRoot, selected: tabSelected }}
-              label={`VOTE (${stats.sizes.faceoffs})`}
+              label={`EM VOTAÇÃO (${stats.sizes.faceoffs})`}
+            />
+            <Tab
+              disableRipple
+              value="removed"
+              classes={{ root: tabRoot, selected: tabSelected }}
+              label={`REMOVIDOS (${stats.sizes.removed})`}
             />
           </Tabs>
         </TabsContainer>

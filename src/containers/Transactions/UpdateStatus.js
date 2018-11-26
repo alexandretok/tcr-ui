@@ -23,27 +23,24 @@ export default class UpdateStatus extends Component {
       <TransactionsContext.Consumer>
         {({ selectedOne, closeTxPanel, onSendTx, opened, tcr }) => (
           <SidePanel
-            title="Update a listing's status"
+            title="Atualizar o status de um registro"
             opened={opened === 'updateStatus'}
             onClose={closeTxPanel}
           >
             {selectedOne && (
               <div>
                 <SideSplit
-                  leftTitle={'Votes For'}
+                  leftTitle={'Votos a Favor'}
                   leftItem={fromTokenBase(selectedOne.votesFor, tcr.tokenDecimals)}
-                  rightTitle={'Votes Against'}
+                  rightTitle={'Votos Contra'}
                   rightItem={fromTokenBase(selectedOne.votesAgainst, tcr.tokenDecimals)}
                 />
                 <SideSplit
-                  leftTitle={'Tokens you voted with'}
-                  leftItem={
-                    selectedOne && fromTokenBase(selectedOne.userVotes, tcr.tokenDecimals)
-                  }
-                  rightTitle={'Total Votes'}
+                  leftTitle={'Quantidade de Tokens que você votou'}
+                  leftItem={selectedOne && fromTokenBase(selectedOne.userVotes, tcr.tokenDecimals)}
+                  rightTitle={'Total de Votos'}
                   rightItem={
-                    selectedOne &&
-                    fromTokenBase(selectedOne.totalVotes, tcr.tokenDecimals)
+                    selectedOne && fromTokenBase(selectedOne.totalVotes, tcr.tokenDecimals)
                   }
                 />
                 <SideText text={selectedOne && selectedOne.listingID} />
@@ -60,7 +57,7 @@ export default class UpdateStatus extends Component {
                   wide
                   methodName="updateStatus"
                 >
-                  {'UPDATE STATUS'}
+                  {'ATUALIZAR STATUS'}
                 </Button>
               )}
             </MarginDiv>

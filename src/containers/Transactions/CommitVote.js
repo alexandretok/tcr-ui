@@ -140,7 +140,7 @@ class CommitVote extends Component {
         <TransactionsContext.Consumer>
           {({ needToApproveVoting, selectedOne, closeTxPanel, onSendTx, opened }) => (
             <SidePanel
-              title="Commit Your Vote"
+              title="Enviar seu voto"
               opened={opened === 'commitVote'}
               onClose={closeTxPanel}
             >
@@ -156,7 +156,7 @@ class CommitVote extends Component {
               {/* TODO: convert to Provider/Consumer */}
               <ActionsSection>
                 <ActionStepRow>
-                  <ActionTitle>{'CHOOSE YOUR SIDE'}</ActionTitle>
+                  <ActionTitle>{'ESCOLHA SEU VOTO'}</ActionTitle>
                   <SupportApplication>
                     <Radio
                       checked={this.state.voteOption === '1'}
@@ -164,7 +164,7 @@ class CommitVote extends Component {
                       color="primary"
                       handleCheckRadio={this.handleChangeVoteOption}
                     />
-                    {'Support'}
+                    {'Favorável'}
                     <ThumbIcon>
                       <Img alt="like" src={likeIcon} />
                     </ThumbIcon>
@@ -176,7 +176,7 @@ class CommitVote extends Component {
                       color="secondary"
                       handleCheckRadio={this.handleChangeVoteOption}
                     />
-                    {'Oppose'}
+                    {'Contra'}
                     <ThumbIcon>
                       <Img alt="dislike" src={thumbsDownIcon} />
                     </ThumbIcon>
@@ -184,9 +184,10 @@ class CommitVote extends Component {
                 </ActionStepRow>
 
                 <ActionStepRow>
-                  <ActionTitle>TOKENS TO COMMIT</ActionTitle>
+                  <ActionTitle>TOKENS A DEPOSITAR</ActionTitle>
                   <ActionInstructions>
-                    Please enter the amount of tokens you wish to commit to your vote
+                    Por favor, informe a quantidade de tokens que você deseja enviar para o seu
+                    voto.
                   </ActionInstructions>
 
                   <InputFormRow>
@@ -195,14 +196,12 @@ class CommitVote extends Component {
                       onChange={this.handleChangeNumTokens}
                     />
                     {needToApproveVoting ? (
-                      <NumTokensButton
-                        onClick={() => onSendTx('approveVoting', this.state)}
-                      >
-                        APPROVE
+                      <NumTokensButton onClick={() => onSendTx('approveVoting', this.state)}>
+                        APROVAR
                       </NumTokensButton>
                     ) : (
                       <NumTokensButton onClick={() => onSendTx('commitVote', this.state)}>
-                        SUBMIT
+                        ENVIAR
                       </NumTokensButton>
                     )}
                   </InputFormRow>
@@ -216,13 +215,6 @@ class CommitVote extends Component {
                   </Button>
                 </ActionStepRow> */}
               </ActionsSection>
-
-              <ReturnToRegistry>
-                <ArrowIcon>
-                  <Img alt="goback" src={leftArrowIcon} />
-                </ArrowIcon>
-                Go back to registry
-              </ReturnToRegistry>
             </SidePanel>
           )}
         </TransactionsContext.Consumer>

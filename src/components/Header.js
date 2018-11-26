@@ -110,7 +110,7 @@ class Header extends Component {
 
         <NavWrapper>
           <NavLinks>
-            <NavLink onClick={e => onOpenTxPanel(null, 'apply')}>Add an application</NavLink>
+            <NavLink onClick={e => onOpenTxPanel(null, 'apply')}>Adicionar Candidato</NavLink>
           </NavLinks>
 
           <UserInfo>

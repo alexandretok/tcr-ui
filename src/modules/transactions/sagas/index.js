@@ -121,7 +121,7 @@ function* sendTxStartSaga(action) {
         break
       }
       case 'claimReward': {
-        const args = [pollID, voteOption, salt]
+        const args = [pollID]
         yield call(sendTransactionSaga, registry, methodName, args)
         break
       }

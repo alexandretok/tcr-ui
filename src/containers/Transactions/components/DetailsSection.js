@@ -38,7 +38,7 @@ function DetailsSection({ listing }) {
         <ListingTitle>{listing.listingID}</ListingTitle>
 
         <ListingCountdown>
-          <div>Vote Ends In</div>
+          <div>Votação encerra em</div>
           <div>00 : 20 : 00</div>
         </ListingCountdown>
       </ListingInfoColumn>
