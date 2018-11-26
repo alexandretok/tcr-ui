@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-  display: flex;
+  display: inline;
   /* justify-content: center; */
   box-sizing: border-box;
   text-align: center;

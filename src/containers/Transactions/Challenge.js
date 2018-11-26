@@ -37,7 +37,6 @@ export default class Challenge extends React.Component {
             {needToApproveRegistry && <div>You need to approve the registry</div>}
             <SidePanelSeparator />
 
-            <SideText size="xlarge" text={selectedOne && selectedOne.listingID} />
             <SideText text={selectedOne && selectedOne.data} />
 
             <MarginDiv>

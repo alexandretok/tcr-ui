@@ -24,8 +24,8 @@ const ButtonContainer = styled.div`
 
 const styles = {
   card: {
-    width: 170,
-    height: 400,
+    width: '100%',
+    height: 'auto',
     margin: 15,
     padding: '.5em',
     overflow: 'hidden',
@@ -36,10 +36,17 @@ const styles = {
     height: 40,
     margin: 15,
   },
-  content: {
-    height: 100,
+  content: {},
+  buttContainer: {
+    'margin-bottom': 55,
   },
-  buttContainer: {},
+  buttonContainer: {
+    'margin-top': 20,
+    'margin-bottom': 20,
+  },
+  inline: {
+    display: 'inline',
+  },
 }
 
 function ListingCard(props) {
@@ -53,21 +60,18 @@ function ListingCard(props) {
     claimRewardTrigger,
   } = props
 
-  console.log('update', updateTrigger, 'reveal', revealTrigger, 'claim', claimRewardTrigger)
-
   return (
     <div>
       <Card className={classes.card}>
-        <div className={classes.media}>
-          <h2>{one.listingID}</h2>
-        </div>
-
         <CardContent className={classes.content}>
-          <br />
-          <br />
-          <div>{one.listingID}</div>
+          <div>
+            <a href={one.listingID} target="_blank">
+              {one.listingID}
+            </a>
+          </div>
           <PadDiv className={classes.buttContainer}>
             <Typography component="p">
+              Adicionado em&nbsp;
               {tsToMonthDate(
                 one.whitelistBlockTimestamp
                   ? one.whitelistBlockTimestamp
@@ -77,11 +81,11 @@ function ListingCard(props) {
           </PadDiv>
         </CardContent>
 
-        <ButtonContainer>
+        <ButtonContainer className={classes.buttonContainer}>
           {listingType === 'faceoffs' ? (
             <div>
               {!revealTrigger && !updateTrigger ? (
-                <div>
+                <div className={classes.inline}>
                   <Countdown end={one.commitExpiry.date} />
                   <Button
                     methodName="commitVote"
@@ -94,7 +98,7 @@ function ListingCard(props) {
               ) : (
                 revealTrigger &&
                 !updateTrigger && (
-                  <div>
+                  <div className={classes.inline}>
                     <Countdown end={one.revealExpiry.date} />
                     <Button
                       onClick={e => openTxPanel(one, 'revealVote')}
@@ -108,7 +112,7 @@ function ListingCard(props) {
               )}
             </div>
           ) : listingType !== 'removed' ? (
-            <div>
+            <div className={classes.inline}>
               <Countdown end={one.appExpiry.date} />
               <Button
                 wide

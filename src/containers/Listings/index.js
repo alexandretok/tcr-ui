@@ -15,7 +15,7 @@ import toJS from 'components/toJS'
 import ListingCard from './components/ListingCard'
 
 const ListingsContainer = styled.div`
-  display: flex;
+  display: block;
   justify-content: flex-start;
   width: 90vw;
   margin: 20px auto 0;

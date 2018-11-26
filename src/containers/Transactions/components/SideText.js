@@ -5,6 +5,7 @@ import Text from 'components/Text'
 
 const MarginDiv = styled.div`
   margin: 2em 0;
+  word-break: break-all;
 `
 export default ({ title, text, small, color, size }) => (
   <div>

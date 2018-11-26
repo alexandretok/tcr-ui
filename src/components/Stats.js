@@ -31,11 +31,11 @@ export default ({ stats, balances, tcr }) => (
     </StatContainer>
     <StatContainer>
       <Stat>{balances.totalStake}</Stat>
-      <StatLabel>{`${tcr.tokenSymbol} TOKENS COMPROMETIDOS`}</StatLabel>
+      <StatLabel>TOKENS COMPROMETIDOS</StatLabel>
     </StatContainer>
     <StatContainer>
       <Stat>{stats.sizes.whitelist}</Stat>
-      <StatLabel>NOTÍCIAS FALSAS ACEITAS</StatLabel>
+      <StatLabel>NOTÍCIAS FALSAS</StatLabel>
     </StatContainer>
   </StatsWrapper>
 )
