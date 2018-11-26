@@ -110,7 +110,7 @@ class Header extends Component {
 
         <NavWrapper>
           <NavLinks>
-            <NavLink onClick={e => onOpenTxPanel(null, 'apply')}>Adicionar Candidato</NavLink>
+            <NavLink onClick={e => onOpenTxPanel(null, 'apply')}>Adicionar candidato</NavLink>
           </NavLinks>
 
           <UserInfo>
@@ -122,12 +122,10 @@ class Header extends Component {
               <TokenBalance onClick={() => onOpenTxPanel(null, 'transfer')}>
                 {balances.token} {tcr.tokenSymbol}
               </TokenBalance>
-              <EtherBalance>0.00 USD {balances.ETH} ETH</EtherBalance>
+              <EtherBalance>{balances.ETH} ETH</EtherBalance>
             </Balances>
 
-            <DropdownCaratIcon onClick={this.handleDropdown}>
-              <Img alt="dropdown" src={dropDownCaratIconSrc} />
-            </DropdownCaratIcon>
+            <DropdownCaratIcon />
           </UserInfo>
         </NavWrapper>
       </HeaderWrapper>

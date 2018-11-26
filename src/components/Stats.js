@@ -31,7 +31,7 @@ export default ({ stats, balances, tcr }) => (
     </StatContainer>
     <StatContainer>
       <Stat>{balances.totalStake}</Stat>
-      <StatLabel>{`TOTAL DE ${tcr.tokenSymbol} COMPROMETIDOS`}</StatLabel>
+      <StatLabel>{`${tcr.tokenSymbol} TOKENS COMPROMETIDOS`}</StatLabel>
     </StatContainer>
     <StatContainer>
       <Stat>{stats.sizes.whitelist}</Stat>

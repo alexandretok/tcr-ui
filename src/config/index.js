@@ -16,7 +16,7 @@ export function getIpfsABIsHash(tokenAddress) {
 export const registries = {
   ganache: [
     {
-      name: 'Fake News Registry',
+      name: 'Registro de Notícias Falsas',
       tokenAddress: '0x2d679f05300bb47f4d8730d96d146a23392b9794',
       votingAddress: '0xfde1389438b91d6b3b8a34cb69135306d6a4cc98',
       parameterizerAddress: '0xc1ee1f2c799640bcca90311832d53a2e1d663e74',

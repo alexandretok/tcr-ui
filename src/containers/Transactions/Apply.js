@@ -106,7 +106,7 @@ export default class Apply extends React.Component {
                         balances.registryAllowance
                       }. O depósito mínimo para uma candidatura é de ${parameters.minDeposit} ${
                         tcr.tokenSymbol
-                      }`}
+                      }.`}
                     />
                   )}
                 </div>
