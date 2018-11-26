@@ -41,7 +41,7 @@ class TransactionsProvider extends Component {
       txPanelMethod,
     } = this.props
 
-    const needToApproveRegistry = balances.registryAllowance < parameters.minDeposit
+    const needToApproveRegistry = +balances.registryAllowance < +parameters.minDeposit
     const needToApproveVoting = txPanelListing
       ? +balances.votingAllowance < +txPanelListing.unstakedDeposit
       : false
