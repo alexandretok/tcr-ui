@@ -21,7 +21,7 @@ const Banner = styled.div`
 
 export default ({ tcr }) => (
   <BannerWrapper>
-    <Banner>{'Bem vindo ao TCR de Fake News'}</Banner>
+    <Banner>{'Bem vindo ao Registro de Notícias Falsas'}</Banner>
     {/* <Banner>{`Address: ${tcr.registryAddress}`}</Banner> */}
   </BannerWrapper>
 )

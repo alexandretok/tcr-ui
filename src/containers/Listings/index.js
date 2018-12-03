@@ -73,7 +73,7 @@ class Listings extends Component {
                   : false
               }
               claimRewardTrigger={
-                listingType === 'removed'
+                listingType === 'removed' || visibleListings[li].tokensToClaim
                   ? dateHasPassed(visibleListings[li].commitExpiry.timestamp)
                   : false
               }
